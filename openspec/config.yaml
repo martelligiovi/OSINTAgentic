@@ -1,0 +1,51 @@
+schema: spec-driven
+
+context: |
+  Project: OSINTAgentic
+  Repository: https://github.com/martelligiovi/OSINTAgentic.git
+  Branch: main
+  Stack: Minimal repository with README.md and LICENSE; no supported application project markers detected within the bounded discovery scope.
+  Architecture: Not established; README contains only the project title.
+  Testing: No project roots or workspace-level test command detected.
+  Persistence: Hybrid OpenSpec + Engram.
+
+strict_tdd: false
+strict_tdd_reason: >-
+  Disabled because no supported project root and no explicit workspace-level test
+  command covers an in-scope project.
+
+projects: []
+
+testing:
+  workspace_command: ""
+  test_layers: []
+  coverage: []
+  quality_tools: []
+  fallback: >-
+    No supported project markers were found at the workspace root or within the
+    bounded two-level discovery depth; preserve this result until a project and
+    workspace-wide test command are added.
+
+rules:
+  proposal:
+    - Include rollback plans for risky changes.
+  specs:
+    - Use Given/When/Then scenarios.
+    - Use RFC 2119 keywords where normative behavior is specified.
+  design:
+    - Document architecture decisions with rationale.
+    - Include sequence diagrams for complex flows.
+  tasks:
+    - Group tasks by phase with hierarchical numbering.
+    - Keep tasks completable in one session.
+  apply:
+    guidelines:
+      - Establish the target stack and tests before implementation.
+    tdd: false
+    test_command: ""
+  verify:
+    test_command: ""
+    build_command: ""
+    coverage_threshold: 0
+  archive:
+    - Warn before merging destructive deltas.

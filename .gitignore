@@ -1,0 +1,6 @@
+# Local SDD and agent registry artifacts
+.atl/
+
+# Node.js build and test output
+node_modules/
+coverage/
